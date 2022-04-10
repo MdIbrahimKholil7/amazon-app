@@ -10,4 +10,6 @@ const useProduct=()=>{
     },[])
     return [products,setProduct]
 }
-export default useProduct;
+
+
+export default useProduct

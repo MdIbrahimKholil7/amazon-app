@@ -10,7 +10,7 @@ const Header = () => {
         {name:'Login',path:'/Login',id:5},
     ]
     return (
-        <div className='w-full text-white h-[8rem] bg-[#1C2B35] flex items-center justify-center'>
+        <div className='w-full text-white h-[8rem] bg-[#1C2B35] flex items-center justify-center sticky top-0 z-30'>
             <div className="header w-[90%] mx-auto flex justify-between items-center">
                 <div>
                     <img src={logo} alt="" />
@@ -18,7 +18,7 @@ const Header = () => {
                 <nav>
                     <ul className='flex'>
                         {
-                            links.map(link => <li>
+                            links.map((link,index) => <li key={index}>
                                <NavLink
                                className='ml-5 text-2xl'
                                 key={link.id}

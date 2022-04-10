@@ -8,14 +8,18 @@
 .product-container{
     
     display: grid;
-    grid-template-columns: repeat(3,30rem);
+    /* grid-template-columns: repeat(3,30rem); */
+    grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
     gap: 5rem;
     justify-content: center;
 }
 .cart-container{
-  
+    position: sticky;
+    top: 8rem;
+    height: calc(100vh - 8rem);
     background: red;
     height: 100vh;
+    background: #FFE0B3;
 }
 
 @media screen and (max-width:1150px){
