@@ -17,7 +17,6 @@
     position: sticky;
     top: 8rem;
     height: calc(100vh - 8rem);
-    background: red;
     height: 100vh;
     background: #FFE0B3;
 }

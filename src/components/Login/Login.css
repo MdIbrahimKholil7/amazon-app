@@ -1,0 +1,10 @@
+.form-container{
+    box-shadow: -17px 15px 0px rgb(255 224 179);
+}
+
+@media screen and (max-width:1250px){
+    .form-container{
+        width: 40rem;
+        height: 60rem;
+    }
+}
