@@ -11,7 +11,8 @@ const Order = () => {
         <div className='flex justify-end'>
 
             <section className='shop-container'>
-            <div className="order-product">
+            <div className="order-product mt-20">
+                <h1 className='mb-20 text-center text-5xl'>Your Order Product</h1>
                 {
                     cart.map(item=><OrderProduct 
                         key={item.id}
@@ -19,7 +20,7 @@ const Order = () => {
                         />)
                 }
             </div>
-            <div className="cart-container">
+            <div className="cart-container order-cart">
                 <OrderSummery items={cart}/>
             </div>
         </section>
