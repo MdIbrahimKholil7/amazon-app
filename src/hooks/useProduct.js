@@ -11,5 +11,4 @@ const useProduct=()=>{
     return [products,setProduct]
 }
 
-
 export default useProduct
