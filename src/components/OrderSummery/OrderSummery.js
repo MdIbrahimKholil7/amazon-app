@@ -1,9 +1,10 @@
+import { ArrowSmRightIcon, CreditCardIcon, TrashIcon } from '@heroicons/react/solid';
 import React from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
-const OrderSummery = ({items}) => {
-    
+const OrderSummery = ({items,clearCart}) => {
+    const location=useLocation()
     // const {price,shipping}=item
-    console.log(items)
     let price=0
     let shipping=0
     let tax=0
@@ -18,6 +19,12 @@ const OrderSummery = ({items}) => {
         total=price+shipping+tax
     }
    }
+   const navigate=useNavigate()
+
+//    for shipping 
+   const handleShipping=()=>{
+        navigate('/shipping')
+   }
     return (
         <div className='mt-6'> 
             <h1 className='text-center text-[2.4rem]'>Order Summery</h1>
@@ -27,6 +34,12 @@ const OrderSummery = ({items}) => {
                 <p className='text-[1.7rem] mt-5'>Shipping Charge:${shipping}</p>
                 <p className='text-[1.7rem] mt-5'>Tax:{tax.toFixed(2)}</p>
                 <h1 className='text-3xl font-bold mt-6'>Grand Total:${total}</h1>
+            </div>
+            <div className='px-5 mt-8 '>
+                <button onClick={clearCart} className='flex bg-[#FF3030] w-full justify-center items-center text-white py-8 text-2xl rounded h-12 '>Clear Cart <TrashIcon className='w-[3rem] ml-2'/></button>
+               {
+                   location.pathname === '/order' ? <button onClick={handleShipping} className='flex bg-[#FF9900] w-full justify-between items-center text-white px-3 py-8 text-2xl rounded h-12 mt-7'>Proceed CheckOut <CreditCardIcon className='w-[2.4rem] '/></button> : <button className='flex bg-[#FF9900] w-full justify-center items-center text-white py-8 text-2xl rounded h-12 mt-7'>Review Order <ArrowSmRightIcon className='w-[3rem]'/></button>
+               }
             </div>
         </div>
     );

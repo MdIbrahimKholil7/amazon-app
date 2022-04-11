@@ -4,7 +4,6 @@ import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-fi
 import logo from '../../images/google-logo-png-suite-everything-you-need-know-about-google-newest-0.png'
 import './SignUp.css'
 import auth from '../../firebase.init';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
 const SignUp = () => {
     const [email,setEmail]=useState({})
     const [password,setPassword]=useState({})

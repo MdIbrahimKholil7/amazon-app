@@ -1,7 +1,7 @@
 import { TrashIcon } from '@heroicons/react/solid';
 import React from 'react';
 import './OrderProduct.css'
-const OrderProduct = ({ item }) => {
+const OrderProduct = ({ item,removeCart }) => {
     const { img, name, price, quantity, shipping } = item
     return (
         <div className=''>
@@ -14,7 +14,7 @@ const OrderProduct = ({ item }) => {
                         <p className='text-[1.5rem] mb-[.4rem]'>Shipping Charge:<span>{shipping}</span></p>
                         <small className=' mb-[.4rem] text-[1rem]'>Quantity:<span>{quantity}</span></small>
                     </div>
-                    <button className='btn p-8 rounded-[50%] mr-[2rem]'><TrashIcon className='w-[3rem] text-[#EB5757]' /></button>
+                    <button onClick={()=>removeCart(item)} className='btn p-8 rounded-[50%] mr-[2rem]'><TrashIcon className='w-[3rem] text-[#EB5757]' /></button>
                 </div>
             </div>
         </div>
